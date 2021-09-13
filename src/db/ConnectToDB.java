@@ -18,7 +18,7 @@ public class ConnectToDB {
 
     }
     /*****************************************
-     * Подключаемся к БД MySQL1				 *
+     * Подключаемся к БД MySQL				 *
      *****************************************/
     public void ConToDb()
     {
@@ -36,7 +36,7 @@ public class ConnectToDB {
             // opening database connection to MySQL server
             con = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
-            AlertDialog(e.getMessage(), "Âíèìàíèå! Îøèáêà ïîäêëþ÷åíèÿ ê ÁÄ.");
+            AlertDialog(e.getMessage(), "Внимание! Ошибка подключения к БД.");
         }
         return con;
     }
