@@ -15,7 +15,7 @@ public class SqlQuery {
     ConnectToDB connectToDB = new ConnectToDB();
     private Statement stmt;
     private ResultSet rs;
-    private List<String> userList;
+    private List<Users> userList;
     Users users = new Users();
 
     public SqlQuery() {
@@ -31,7 +31,7 @@ public class SqlQuery {
      * 			 права пользователя на определенные действия в программе.
      */
     @SuppressWarnings("static-access")
-    public List<String> checkLogin(String login)
+    public List<Users> checkLogin(String login)
     {
         try {
             String query = "select id, passwd, role from users where login = "+"'"+login+"'"+";";
@@ -45,9 +45,7 @@ public class SqlQuery {
                 users.setPasswd(rs.getString(2));
                 users.setRole(rs.getString(3));
 
-                userList.add(users.getId().toString());
-                userList.add(users.getPasswd());
-                userList.add(users.getRole());
+                userList.add(users);
             }
         }
         catch (SQLException e) {
