@@ -1,6 +1,7 @@
 package db;
 
 import Entity.Users;
+import dialog.DialogAlert;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +18,7 @@ public class SqlQuery {
     private ResultSet rs;
     private List<Users> userList;
     Users users = new Users();
+    DialogAlert dialogAlert = new DialogAlert();
 
     public SqlQuery() {
 
@@ -49,7 +51,7 @@ public class SqlQuery {
             }
         }
         catch (SQLException e) {
-            ConnectToDB.AlertDialog(e.getMessage(), " Ошибка!");
+            dialogAlert.createDialog(" Ошибка!", e.getMessage(), true).setVisible(true);
         } finally {
 
             try { connectToDB.con.close(); } catch(SQLException se) { /*can't do anything */ }
@@ -77,7 +79,7 @@ public class SqlQuery {
             stmt.executeUpdate(query);
 
         } catch (SQLException e) {
-            connectToDB.AlertDialog(e.getMessage(), "Ошибка!");
+            dialogAlert.createDialog(" Ошибка!", e.getMessage(), true).setVisible(true);
         }
         finally {
             //close connection ,stmt and resultset here
@@ -104,7 +106,7 @@ public class SqlQuery {
             stmt.executeUpdate(query);
 
         } catch (SQLException e) {
-            connectToDB.AlertDialog(e.getMessage(), "Ошибка!");
+            dialogAlert.createDialog(" Ошибка!", e.getMessage(), true).setVisible(true);
         }
         finally {
             //close connection ,stmt and resultset here
