@@ -31,7 +31,7 @@ public class SqlQuery {
      * 			 права пользователя на определенные действия в программе.
      */
     @SuppressWarnings("static-access")
-    public List<String> CheckLogin(String login)
+    public List<String> checkLogin(String login)
     {
         try {
             String query = "select id, passwd, role from users where login = "+"'"+login+"'"+";";
