@@ -10,8 +10,8 @@ import java.util.Optional;
 
 public class ConnectToDB {
     private static final String url = "jdbc:mysql://192.168.100.245:3306/hmmr_mu";
-    private static final String user = "hmmr";
-    private static final String password = "Ro145437";
+    private static final String user = "логин к БД";
+    private static final String password = "пароль к БД";
     public static Connection con;
 
     public ConnectToDB() {
