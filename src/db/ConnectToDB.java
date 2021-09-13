@@ -46,7 +46,7 @@ public class ConnectToDB {
      * @param str - Сообщение которое выведет диалоговое окно
      * @param str1 - Сообщение которое будет в титле
      */
-    private void AlertDialog(String str, String str1)
+    public static void AlertDialog(String str, String str1)
     {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(str1);
